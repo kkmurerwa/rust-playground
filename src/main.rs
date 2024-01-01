@@ -16,7 +16,7 @@ fn main() {
         let score = scores[i];
         let grade = calculate_grade(&score);
         let comment = get_comment(&grade);
-        let name = names[i];
+        let name = names[i].to_string();
 
         let student = Student {
             name,
@@ -43,7 +43,7 @@ fn calculate_grade(score: &i32) -> char {
     };
 }
 
-fn get_comment(grade: &char) -> &'static str {
+fn get_comment(grade: &char) -> String {
     let comment = match grade {
         'A' | 'B' => "Very Good",
         'C' => "Average",
@@ -51,13 +51,13 @@ fn get_comment(grade: &char) -> &'static str {
         _ => "Failure"
     };
 
-    return comment;
+    return comment.to_string();
 }
 
 // Student object
 struct Student {
-    name: &'static str,
+    name: String,
     score: i32,
     grade: char,
-    comment: &'static str,
+    comment: String,
 }
