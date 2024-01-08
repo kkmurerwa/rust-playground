@@ -1,5 +1,4 @@
 use std::io;
-use std::error::Error;
 
 pub fn run_fizz_buzz() -> Vec<String> {
     // Take user input
@@ -48,7 +47,6 @@ fn get_output_string(input: &i32) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use std::io::Cursor;
 
     #[test]
     fn test_run_fizz_buzz() {
